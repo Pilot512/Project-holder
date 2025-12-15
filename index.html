@@ -1065,8 +1065,6 @@
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="section-title animate-slide">
@@ -1134,8 +1132,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <div class="section-title animate-slide">
@@ -1144,7 +1140,6 @@
             </div>
             
             <div class="projects-grid">
-                <!-- Project 1 -->
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="image1.png" alt="Portfolio Website" loading="lazy">
@@ -1160,13 +1155,11 @@
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">GSAP</span>
                         </div>
-                        <a href="https://my-project512.github.io/RESUME-project/" target="_blank" class="btn btn-primary">
+                        <a href="https://cloudCoder512.github.io/RESUME-project/" target="_blank" class="btn btn-primary">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="image2.png" alt="Official Website" loading="lazy">
@@ -1182,13 +1175,11 @@
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
                         </div>
-                        <a href="https://my-project512.github.io/CornFlax/" target="_blank" class="btn btn-primary">
+                        <a href="https://cloudCoder512.github.io/CornFlax/" target="_blank" class="btn btn-primary">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </div>
-                
-                <!-- Project 3 -->
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="Typing-master.jpg" alt="Typing Master" loading="lazy">
@@ -1204,13 +1195,11 @@
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">Express</span>
                         </div>
-                        <a href="https://pilot512.github.io/Typing-Expert/" target="_blank" class="btn btn-primary">
+                        <a href="https://cloudCoder512.github.io/Typing-Expert/" target="_blank" class="btn btn-primary">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </div>
-                
-                <!-- Project 4 -->
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="https://static.wixstatic.com/media/bac040_594435869f7b44ff96b840309eee6fb3~mv2.png" alt="Microsoft Activation" loading="lazy">
@@ -1226,13 +1215,11 @@
                             <span class="tech-tag">Shell Script</span>
                             <span class="tech-tag">Automation</span>
                         </div>
-                        <a href="https://pilot512.github.io/Microsoft-Activation-Scripts/" target="_blank" class="btn btn-primary">
+                        <a href="https://cloudCoder512.github.io/Microsoft-Activation-Scripts/" target="_blank" class="btn btn-primary">
                             <i class="fas fa-external-link-alt"></i> View Project
                         </a>
                     </div>
                 </div>
-                
-                <!-- Project 5 -->
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="image.png" alt="Education Platform" loading="lazy">
@@ -1254,7 +1241,6 @@
                     </div>
                 </div>
                 
-                <!-- Project 6 -->
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="image3.png" alt="3D Website" loading="lazy">
@@ -1275,11 +1261,31 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="project-card animate-slide">
+                    <div class="project-image">
+                        <img src="image3.png" alt="3D Website" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>CyberActivator-Pro</h3>
+                        <p>
+                            Window Activation Tools
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">WebGL</span>
+                            <span class="tech-tag">GLSL</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                        <a href="https://github.com/cloudCoder512/CyberActivator-Pro/" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>   
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="section-title animate-slide">
@@ -1359,8 +1365,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1409,10 +1413,7 @@
     </footer>
 
     <script>
-        // Initialize EmailJS
         emailjs.init('RO3yLspygrBQx32Oa');
-
-        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         const overlay = document.getElementById('overlay');
@@ -1425,8 +1426,6 @@
 
         menuToggle.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking links
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1434,8 +1433,6 @@
                 document.body.style.overflow = '';
             });
         });
-
-        // Create particle effect
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = window.innerWidth < 768 ? 25 : 50;
@@ -1450,8 +1447,6 @@
                 particlesContainer.appendChild(particle);
             }
         }
-
-        // Animate elements on scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.animate-slide');
             
@@ -1474,8 +1469,6 @@
                 observer.observe(el);
             });
         }
-
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1484,11 +1477,9 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu if open
                     if (navLinks.classList.contains('active')) {
                         toggleMenu();
                     }
-                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
@@ -1496,8 +1487,6 @@
                 }
             });
         });
-
-        // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1538,8 +1527,6 @@
                     }, 3000);
                 });
         });
-
-        // Animate skill bars
         function animateSkillBars() {
             const skillBars = document.querySelectorAll('.skill-progress-bar');
             skillBars.forEach(bar => {
@@ -1550,19 +1537,14 @@
                 }, 500);
             });
         }
-
-        // Handle window resize
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                // Update particles for new screen size
                 document.getElementById('particles').innerHTML = '';
                 createParticles();
             }, 250);
         });
-
-        // Update active nav link on scroll
         function updateActiveNavLink() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
@@ -1583,20 +1565,14 @@
                 }
             });
         }
-
-        // Initialize everything
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
             animateOnScroll();
             animateSkillBars();
             
             window.addEventListener('scroll', updateActiveNavLink);
-            
-            // Initial check for active link
             updateActiveNavLink();
         });
-
-        // Prevent right-click and dev tools
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
@@ -1609,11 +1585,10 @@
                 e.preventDefault();
             }
         });
-
-        // Touch device optimizations
         if ('ontouchstart' in window) {
             document.documentElement.classList.add('touch-device');
         }
     </script>
 </body>
 </html>
+
