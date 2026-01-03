@@ -50,16 +50,16 @@ https://cloudCoder512.github.io/Project-holder/
 <pre>
 Project Root
 │
-├── index.html                # Main Home Page
-├── Dashboard.html            # Dashboard Page
-├── Contact.html              # Contact Page
-├── Support.html              # Support Page
+├── index.html              
+├── Dashboard.html         
+├── Contact.html           
+├── Support.html            
 │
-├── style.css                 # Main Website Styles
-├── Contactstyle.css          # Contact Page Styles
-├── script.js                 # JavaScript Functionality
+├── style.css               
+├── Contactstyle.css         
+├── script.js                
 │
-├── sitemap.xml               # SEO Sitemap
+├── sitemap.xml              
 │
 ├── assets/
 │   ├── images/
@@ -77,28 +77,28 @@ Project Root
 │   └── archive/
 │       └── Orignal Riocs Computer.zip
 │
-├── README.md                 # Project Documentation
+├── README.md               
 │
 └── Project/
-    └── holder/               # Project holder / reserved folder
-Frontend:
+    └── holder/          
+1. Frontend:
 - HTML5
 - CSS3
 - JavaScript
 
-Backend / Logic:
+2. Backend / Logic:
 - C++
 - REST API
 
-Database:
+3. Database:
 - MongoDB
 - MySQL
 
-Integrations:
+4. Integrations:
 - Email.js
 - Google Services / APIs
 
-Dev & Deployment:
+5. Dev & Deployment:
 - GitHub Pages
 - DevOps Practices
 
