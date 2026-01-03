@@ -19,7 +19,7 @@ and simple structure. It is hosted using <strong>GitHub Pages</strong>.
 <h2>🚀 Live Demo</h2>
 <p>
 <a href="https://cloudCoder512.github.io/Project-holder/" target="_blank">
-https://your-username.github.io/your-repository-name/
+https://cloudCoder512.github.io/Project-holder/
 </a>
 </p>
 
