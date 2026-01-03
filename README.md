@@ -48,9 +48,60 @@ https://cloudCoder512.github.io/Project-holder/
 
 <h2>📂 Project Structure</h2>
 <pre>
-index.html
-style.css
-README.md
+Project Root
+│
+├── index.html                # Main Home Page
+├── Dashboard.html            # Dashboard Page
+├── Contact.html              # Contact Page
+├── Support.html              # Support Page
+│
+├── style.css                 # Main Website Styles
+├── Contactstyle.css          # Contact Page Styles
+├── script.js                 # JavaScript Functionality
+│
+├── sitemap.xml               # SEO Sitemap
+│
+├── assets/
+│   ├── images/
+│   │   ├── 4807934.png
+│   │   ├── CyberActivator.png
+│   │   ├── Typing-master.jpg
+│   │   ├── image.png
+│   │   ├── image1.png
+│   │   ├── image2.png
+│   │   ├── image3.png
+│   │   ├── image4.png
+│   │   ├── image5.png
+│   │   └── logo.svg
+│   │
+│   └── archive/
+│       └── Orignal Riocs Computer.zip
+│
+├── README.md                 # Project Documentation
+│
+└── Project/
+    └── holder/               # Project holder / reserved folder
+Frontend:
+- HTML5
+- CSS3
+- JavaScript
+
+Backend / Logic:
+- C++
+- REST API
+
+Database:
+- MongoDB
+- MySQL
+
+Integrations:
+- Email.js
+- Google Services / APIs
+
+Dev & Deployment:
+- GitHub Pages
+- DevOps Practices
+
 </pre>
 
 <h2>🧑‍💻 How to Use</h2>
