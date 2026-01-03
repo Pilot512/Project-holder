@@ -71,7 +71,7 @@ which provides free and reliable hosting for static websites.
 <strong>Your Name</strong><br>
 GitHub:
 <a href="https://github.com/cloudCoder512" target="_blank">
-https://github.com/your-username
+https://github.com/cloudCoder512
 </a>
 </p>
 
