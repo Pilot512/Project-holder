@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
-    <title>Adarsh Varma | Full Stack Developer</title>
+    <title>MyVault| Adarsh Varma | Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js"></script>
     <style>
@@ -55,8 +55,6 @@
                 radial-gradient(circle at 80% 20%, rgba(255, 46, 99, 0.1) 0%, transparent 50%),
                 var(--darker);
         }
-
-        /* Grid Background - Responsive */
         .grid-bg {
             position: fixed;
             top: 0;
@@ -71,8 +69,6 @@
             z-index: -1;
             opacity: 0.3;
         }
-
-        /* Container - Fully Responsive */
         .container {
             width: 100%;
             max-width: 1400px;
@@ -80,8 +76,6 @@
             padding: 0 clamp(1rem, 5vw, 2rem);
             box-sizing: border-box;
         }
-
-        /* Navigation - Mobile First */
         .navbar {
             position: fixed;
             top: 1rem;
@@ -127,8 +121,6 @@
             color: var(--dark);
             flex-shrink: 0;
         }
-
-        /* Desktop Navigation */
         .nav-links {
             display: flex;
             gap: clamp(1rem, 2vw, 2rem);
@@ -171,8 +163,6 @@
             color: var(--dark);
             transform: translateY(-2px);
         }
-
-        /* Mobile Menu Button */
         .menu-toggle {
             display: none;
             background: none;
@@ -183,8 +173,6 @@
             padding: 0.5rem;
             z-index: 1001;
         }
-
-        /* Hero Section - Responsive */
         .hero {
             min-height: 100vh;
             min-height: 100dvh;
@@ -400,8 +388,6 @@
             margin: 0 auto;
             padding: 0 1rem;
         }
-
-        /* About Section - Responsive */
         .about-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -514,8 +500,6 @@
             width: 0;
             transition: width 1.5s ease-in-out;
         }
-
-        /* Projects Section - Responsive */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
@@ -590,8 +574,6 @@
             font-size: clamp(0.7rem, 1.5vw, 0.8rem);
             font-weight: 500;
         }
-
-        /* Contact Section - Responsive */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -729,7 +711,6 @@
             transform: translateY(-5px);
             box-shadow: var(--glow);
         }
-
         .footer-bottom {
             text-align: center;
             padding-top: clamp(1.5rem, 3vw, 2rem);
@@ -737,8 +718,6 @@
             color: #a0a0c0;
             font-size: clamp(0.8rem, 1.5vw, 0.9rem);
         }
-
-        /* Animations */
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -749,12 +728,9 @@
                 transform: translateY(0);
             }
         }
-
         .animate-slide {
             animation: slideIn 0.8s ease-out;
         }
-
-        /* Particle Effect */
         .particles {
             position: fixed;
             top: 0;
@@ -764,7 +740,6 @@
             pointer-events: none;
             z-index: -1;
         }
-
         .particle {
             position: absolute;
             width: 2px;
@@ -773,7 +748,6 @@
             border-radius: 50%;
             animation: particleFloat 15s infinite linear;
         }
-
         @keyframes particleFloat {
             0% {
                 transform: translateY(100vh) translateX(0);
@@ -782,13 +756,10 @@
                 transform: translateY(-100px) translateX(100px);
             }
         }
-
-        /* Mobile Menu Styles */
         @media (max-width: 991px) {
             .menu-toggle {
                 display: block;
             }
-
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -804,18 +775,15 @@
                 z-index: 1000;
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
             }
-
             .nav-links.active {
                 right: 0;
             }
-
             .nav-links a {
                 padding: 1rem 1.5rem;
                 font-size: 1.1rem;
                 border-radius: 10px;
                 margin: 0.5rem 0;
             }
-
             .overlay {
                 display: none;
                 position: fixed;
@@ -827,28 +795,21 @@
                 backdrop-filter: blur(5px);
                 z-index: 999;
             }
-
             .overlay.active {
                 display: block;
             }
-
-            /* Hide floating cards on mobile */
             .floating-card {
                 display: none;
             }
-
             .hero-visual {
                 min-height: 200px;
             }
         }
-
-        /* Extra small devices */
         @media (max-width: 480px) {
             .navbar {
                 padding: 0.6rem 1rem;
                 top: 0.5rem;
             }
-
             .hero {
                 padding-top: 5rem;
             }
@@ -856,82 +817,62 @@
             .hero-text h1 {
                 font-size: 1.8rem;
             }
-
             .cta-buttons {
                 flex-direction: column;
             }
-
             .btn {
                 width: 100%;
             }
-
             .hero-stats {
                 justify-content: center;
             }
-
             .stat {
                 min-width: 80px;
             }
-
             .contact-form {
                 padding: 1.5rem;
             }
-
             .footer-content {
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Tablet devices */
         @media (min-width: 481px) and (max-width: 768px) {
             .hero-text h1 {
                 font-size: 2.5rem;
             }
-
             .floating-card {
                 width: 180px;
             }
-
             .floating-card:nth-child(1) {
                 top: -20px;
                 right: 10px;
             }
-
             .floating-card:nth-child(2) {
                 bottom: 20px;
                 right: 10px;
             }
-
             .floating-card:nth-child(3) {
                 top: 40px;
                 left: 10px;
             }
         }
-
-        /* Landscape mode */
         @media (max-height: 600px) and (orientation: landscape) {
             .hero {
                 min-height: auto;
                 padding: 6rem 0 2rem;
             }
-
             .hero-text h1 {
                 font-size: 2rem;
             }
-
             .hero-visual {
                 min-height: 200px;
             }
         }
-
-        /* High DPI Screens */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .grid-bg {
                 background-size: 25px 25px;
             }
         }
-
-        /* Print Styles */
         @media print {
             .bg-animation,
             .grid-bg,
@@ -941,20 +882,16 @@
             .social-links {
                 display: none !important;
             }
-
             body {
                 background: white !important;
                 color: black !important;
             }
-
             .btn {
                 border: 1px solid black !important;
                 background: white !important;
                 color: black !important;
             }
         }
-
-        /* Accessibility Improvements */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -964,15 +901,12 @@
                 transition-duration: 0.01ms !important;
             }
         }
-
-        /* Touch device optimizations */
         @media (hover: none) and (pointer: coarse) {
             .skill-bar:hover,
             .project-card:hover,
             .contact-item:hover {
                 transform: none;
             }
-
             .nav-links a:hover::before {
                 opacity: 0;
             }
@@ -983,7 +917,6 @@
     <div class="bg-animation"></div>
     <div class="grid-bg"></div>
     <div class="particles" id="particles"></div>
-
     <nav class="navbar">
         <div class="logo">
             <div class="logo-icon">
@@ -991,11 +924,9 @@
             </div>
             <span>Adarsh Varma</span>
         </div>
-        
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
         </button>
-        
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -1234,7 +1165,6 @@
                         </a>
                     </div>
                 </div>
-                
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="image3.png" alt="3D Website" loading="lazy">
@@ -1250,12 +1180,11 @@
                             <span class="tech-tag">GLSL</span>
                             <span class="tech-tag">Animation</span>
                         </div>
-                        <a href="https://my-project512.github.io/get-info-512/" target="_blank" class="btn btn-primary">
+                        <a href="https://cloudcoder512.github.io/3DAdarsh/" target="_blank" class="btn btn-primary">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </div>
-
                 <div class="project-card animate-slide">
                     <div class="project-image">
                         <img src="CyberActivator.png" alt="3D Website" loading="lazy">
@@ -1281,8 +1210,7 @@
         </div>
     </section>
 </body>
-<script>
-    
+<script>  
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('overlay');
@@ -1295,15 +1223,11 @@ menuToggle.addEventListener('click', toggleMenu);
 overlay.addEventListener('click', toggleMenu);
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function(event) {
-
         if (navLinks.classList.contains('active')) {
-    
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
         }
-        
-
         const targetId = this.getAttribute('href');
         if (targetId.startsWith('#')) {
             event.preventDefault();
@@ -1326,4 +1250,3 @@ window.addEventListener('resize', function() {
 });
 </script>
 </html>
-
