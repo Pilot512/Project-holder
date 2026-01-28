@@ -534,7 +534,7 @@
                         localStorage.setItem('rememberedUser', username);
                     }  
                     setTimeout(() => {
-                        window.location.href = './Dashboard.html';
+                        window.location.href = 'Dashboard.html';
                     }, 1500);
                 } else {
                     showMessage('login-message', result.message, 'error');
@@ -569,7 +569,7 @@
                     localStorage.setItem("googleUser", data.email);
                     showMessage('login-message', 'Google login successful! Redirecting...', 'success');
                     setTimeout(() => {
-                        window.location.href = "./Dashboard.html";
+                        window.location.href = "Dashboard.html";
                     }, 1000);
                 } else {
                     showMessage('login-message', 'Google verification failed', 'error');
@@ -590,4 +590,5 @@
 </script>
 </body>
 </html>
+
 
