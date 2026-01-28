@@ -1,356 +1,3 @@
-<!--
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="script.js">js</script>
-  <title>Login • Secure</title>
-  <style>
-     :root {
-       --bg: white;
-       --card: white;
-  --glass: rgba(255, 255, 255, 0.05);
-  --border: #7b61ff;
-  --accent: #9d7bff;
-  --muted: #aaaaaa;
-  --error: #f54a4a;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  background: var(--bg);
-  /*color: #fff;*/
-  color: black;
-}
-
-.wrap {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px;
-}
-
-.card {
-  width: min(850px, 95%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 40px;
-  border-radius: 16px;
-  background: var(--card);
-  border: 2px solid var(--border);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-}
-
-.card h1, 
-.card h2 {
-  margin: 0 0 12px;
-  text-align: left;
-}
-
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.tab {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #222;
-  color: #ccc;
-  font-weight: bold;
-  transition: 0.2s;
-}
-.tab.active {
-  background: var(--accent);
-  color: white;
-}
-
-.panel {
-  display: none;
-}
-.panel.active {
-  display: block;
-}
-
-.field {
-  margin: 16px 0;
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  padding: 12px 14px;
-  border-radius: 25px;
-  border: none;
-  background: #333;
-  color: white;
-  font-size: 1rem;
-}
-
-input::placeholder {
-  color: #888;
-}
-
-input:focus {
-  outline: 2px solid var(--accent);
-}
-
-.btn {
-  padding: 14px;
-  border: none;
-  border-radius: 25px;
-  background: var(--accent);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 12px;
-  transition: 0.2s ease;
-}
-
-.btn:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
-}
-
-.error {
-  color: var(--error);
-  font-size: 0.85rem;
-  margin-top: 2px;
-}
-
-.muted {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-a {
-  color: var(--accent);
-  font-weight: bold;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.toast {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 12px 18px;
-  background: #111;
-  color: white;
-  border-radius: 6px;
-  font-size: .9rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-  </style>
-</head>
-<body>
-    <main class="wrap">
-    <section class="card">
-      <h2>Please Login</h2>
-      <h1>Secure Auth</h1>
-      <div class="tabs">
-        <button id="tab-login" class="tab active">Login</button>
-        <button id="tab-signup" class="tab">Sign Up</button>
-        <button id="tab-forgot" class="tab">Forgot</button>
-      </div> 
-      <div id="panel-login" class="panel active">
-        <label class="field">
-          <span>Email</span>
-          <input id="login-email" type="email" required />
-          <small id="login-email-err" class="error"></small>
-        </label>
-        <label class="field">
-          <span>Password</span>
-          <input id="login-pass" type="password" required />
-          <small id="login-pass-err" class="error"></small>
-        </label>
-        <label><input id="login-remember" type="checkbox" /> Remember me</label>
-        <button id="login-submit" class="btn">Sign in</button>
-      </div>
-      <div id="panel-signup" class="panel">
-        <label class="field">
-          <span>Full name</span>
-          <input id="signup-name" type="text" required />
-          <small id="signup-name-err" class="error"></small>
-        </label>
-        <label class="field">
-          <span>Email</span>
-          <input id="signup-email" type="email" required />
-          <small id="signup-email-err" class="error"></small>
-        </label>
-        <label class="field">
-          <span>Password</span>
-          <input id="signup-pass" type="password" required />
-          <small id="signup-pass-err" class="error"></small>
-        </label>
-        <label class="field">
-          <span>Confirm Password</span>
-          <input id="signup-confirm" type="password" required />
-          <small id="signup-confirm-err" class="error"></small>
-        </label>
-        <label><input id="signup-terms" type="checkbox" /> Accept Terms</label>
-        <small id="signup-terms-err" class="error"></small>
-        <button id="signup-submit" class="btn">Create Account</button>
-      </div>
-      <div id="panel-forgot" class="panel">
-        <label class="field">
-          <span>Email</span>
-          <input id="forgot-email" type="email" required />
-          <small id="forgot-email-err" class="error"></small>
-        </label>
-        <button id="forgot-submit" class="btn">Send reset link</button>
-      </div> 
-      <div id="g_id_onload"
-       data-client_id="355247927664-7aaivt26oodtvtf4u2k658ifninmebq5.apps.googleusercontent.com"
-       data-callback="handleCredentialResponse"></div>
-      <div class="g_id_signin" data-type="standard"></div>
-    </section>
-  </main>
-  <div id="toast"></div>
-    <script>
-
-  function toast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.className = 'toast';
-    setTimeout(() => { t.className = ''; }, 3000);
-  }
-  function handleCredentialResponse(response) {
-    try {
-      const data = parseJwt(response.credential);
-      if (data && data.email) {
-        let users = JSON.parse(localStorage.getItem("users") || "[]");
-        let existing = users.find(u => u.email === data.email);
-        if (!existing) {
-          let user = {
-            name: data.name || data.given_name || "Google User",
-            email: data.email,
-            pass: "google_oauth"
-          };
-          users.push(user);
-          localStorage.setItem("users", JSON.stringify(users));
-        }
-        localStorage.setItem("currentUser", JSON.stringify({
-          name: data.name || data.given_name,
-          email: data.email
-        }));
-        toast("Google login success! Redirecting...");
-        setTimeout(() => {
-          window.location.href = "./Dashboard.html";
-        }, 1000);
-      } else toast("Google login failed!");
-    } catch (e) {
-      console.error(e);
-      toast("Google login failed!");
-    }
-  }
-  function parseJwt(token) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(atob(base64).split('').map(c =>
-      '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-    ).join(''));
-    return JSON.parse(jsonPayload);
-  }
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabs = {
-      login: document.getElementById('tab-login'),
-      signup: document.getElementById('tab-signup'),
-      forgot: document.getElementById('tab-forgot')
-    };
-    const panels = {
-      login: document.getElementById('panel-login'),
-      signup: document.getElementById('panel-signup'),
-      forgot: document.getElementById('panel-forgot')
-    };
-    function switchTo(name) {
-      Object.values(tabs).forEach(b => b.classList.remove('active'));
-      Object.values(panels).forEach(p => p.classList.remove('active'));
-      tabs[name].classList.add('active');
-      panels[name].classList.add('active');
-    }
-    tabs.login.onclick = () => switchTo('login');
-    tabs.signup.onclick = () => switchTo('signup');
-    tabs.forgot.onclick = () => switchTo('forgot');
-
-    function saveUser(user) {
-      let users = JSON.parse(localStorage.getItem("users") || "[]");
-      users.push(user);
-      localStorage.setItem("users", JSON.stringify(users));
-    }
-    function findUser(email) {
-      let users = JSON.parse(localStorage.getItem("users") || "[]");
-      return users.find(u => u.email === email);
-    }
-    document.getElementById('signup-submit').onclick = () => {
-      let name = document.getElementById('signup-name').value.trim();
-      let email = document.getElementById('signup-email').value.trim();
-      let pass = document.getElementById('signup-pass').value;
-      let confirm = document.getElementById('signup-confirm').value;
-      let terms = document.getElementById('signup-terms').checked;
-
-      if (name.length < 2) return toast("Enter full name");
-      if (pass !== confirm) return toast("Passwords do not match");
-      if (!terms) return toast("Accept terms first");
-      if (!email.includes('@')) return toast("Enter valid email");
-      if (findUser(email)) return toast("Email already registered");
-
-      saveUser({ name, email, pass });
-      toast("Account created successfully!");
-      switchTo('login');
-    };
-    document.getElementById('login-submit').onclick = () => {
-      let email = document.getElementById('login-email').value.trim();
-      let pass = document.getElementById('login-pass').value;
-      let remember = document.getElementById('login-remember').checked;
-      let user = findUser(email);
-
-      if (!user) return toast("User not found");
-      if (user.pass !== pass) return toast("Wrong password");
-
-      toast("Login successful!");
-      if (remember) localStorage.setItem("currentUser", JSON.stringify(user));
-
-      setTimeout(() => {
-        window.location.href = "./Dashboard.html";
-      }, 1000);
-    };
-    document.getElementById('forgot-submit').onclick = () => {
-      let email = document.getElementById('forgot-email').value.trim();
-      let user = findUser(email);
-      if (!user) return toast("Email not registered");
-      toast("Reset link sent to your email");
-    };
-    let saved = localStorage.getItem("currentUser");
-    if (saved) {
-      let u = JSON.parse(saved);
-      toast("Welcome back, " + (u.name || "User"));
-      setTimeout(() => {
-        window.location.href = "./Dashboard.html";
-      }, 1000);
-    }
-  });
-  </script>
-</body>
-</html>
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -771,7 +418,7 @@ a:hover {
             </div>
         </div>    
         <div id="g_id_onload"
-            data-client_id="YOUR_GOOGLE_CLIENT_ID"
+            data-client_id="355247927664-7aaivt26oodtvtf4u2k658ifninmebq5.apps.googleusercontent.com"
             data-callback="handleGoogleLogin">
         </div>
         <div class="g_id_signin"
@@ -887,7 +534,7 @@ a:hover {
                         localStorage.setItem('rememberedUser', username);
                     }  
                     setTimeout(() => {
-                        window.location.href = 'main.html';
+                        window.location.href = './Dashboard.html';
                     }, 1500);
                 } else {
                     showMessage('login-message', result.message, 'error');
@@ -921,14 +568,12 @@ a:hover {
                 if (data.email_verified === "true") {
                     localStorage.setItem("googleUser", data.email);
                     showMessage('login-message', 'Google login successful! Redirecting...', 'success');
-                    
                     setTimeout(() => {
-                        window.location.href = "main.html";
+                        window.location.href = "./Dashboard.html";
                     }, 1000);
                 } else {
                     showMessage('login-message', 'Google verification failed', 'error');
                 }
-                
             } catch (err) {
                 hideProgressWheel();
                 showMessage('login-message', 'Google login error', 'error');
@@ -938,7 +583,6 @@ a:hover {
             input.addEventListener('focus', function() {
                 this.parentElement.style.transform = 'translateY(-2px)';
             });
-            
             input.addEventListener('blur', function() {
                 this.parentElement.style.transform = 'translateY(0)';
             });
@@ -946,3 +590,4 @@ a:hover {
 </script>
 </body>
 </html>
+
